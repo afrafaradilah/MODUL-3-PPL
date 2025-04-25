@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class NotesTest extends DuskTestCase
+class ShowTest extends DuskTestCase
 {
     /**
      * A Dusk test example.
@@ -24,14 +24,8 @@ class NotesTest extends DuskTestCase
                     ->assertPathIs('/dashboard') // mengecek apakah berada di halaman dashboard
                     ->clickLink('Notes') // mengklik link notes
                     ->assertPathIs('/notes') // mengecek apakah berada di halaman notes
-                    ->clickLink('Create Note') // menekan tombol create note
-                    ->assertPathIs('/create-note') // mengecek apakah berada di halaman create note
-                    ->type('title', 'Masak') // mengisi kolom tittle dengan Masak
-                    ->type('description', 'Masak nasi goreng') // mengisi kolom description dengan Masak nasi goreng
-                    ->screenshot('create-note.png') // mengambil screenshot halaman create note
-                    ->press('CREATE'); // menekan tombol create
-                    //->assertPathIs('/notes'); // mengecek apakah berada di halaman notes
-
+                    ->clicklink('ba') // mengklik link makan
+                    ->assertPathIs('/note/3'); // mengecek apakah berada di halaman notes
         });
     }
 }
